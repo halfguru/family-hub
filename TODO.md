@@ -1,21 +1,67 @@
-# Family App - TODO
+# Family Hub - TODO
 
 > **See [README.md](./README.md) for features and [DESIGN.md](./DESIGN.md) for design system.**
+
+---
+
+## Phase 0: Infrastructure Setup (Current)
+
+> Build minimal app with no business logic - just infrastructure
+
+### Project Foundation
+- [x] Initialize Next.js 16 with App Router
+- [x] Configure Tailwind CSS with warm minimal color palette
+- [x] Install and configure shadcn/ui
+- [x] Install Lucide React icons
+- [x] Configure Inter font
+- [x] Set up path aliases
+
+### PWA Setup
+- [x] Create manifest.json (app name, icons, theme colors)
+- [x] Configure next-pwa or @ducanh2912/next-pwa
+- [x] Add service worker for offline support
+- [ ] Create app icons (various sizes)
+- [ ] Add install prompt component
+
+### Database & Auth
+- [x] Install Supabase client
+- [x] Create Supabase client helper (lib/db.ts)
+- [x] Install NextAuth.js (Auth.js v5)
+- [x] Configure NextAuth with credentials provider
+- [x] Create auth route handlers
+- [x] Create session provider wrapper
+- [ ] Add middleware for protected routes
+
+### Layout & Navigation
+- [x] Create root layout with providers
+- [x] Build responsive layout wrapper
+- [x] Build mobile bottom nav component
+- [x] Build desktop sidebar component
+- [x] Build header component
+- [x] Add dark mode support (CSS variables)
+
+### Code Quality
+- [x] Configure ESLint rules
+- [x] Add TypeScript strict mode
+- [x] Add typecheck script
+- [x] Add lint script
+
+### Deployment Prep
+- [x] Set up environment variables structure
+- [x] Create .env.example
+- [ ] Configure Vercel project
+
+---
 
 ## Phase 1: Foundation
 
 ### Project Setup
-- [ ] Initialize Next.js 14 with App Router
-- [ ] Configure Tailwind CSS
-- [ ] Install and configure shadcn/ui
 - [ ] Set up custom color palette (warm minimal)
-- [ ] Install Lucide React icons
 - [ ] Configure Inter font
 
 ### Database & Auth
 - [ ] Create Supabase project
 - [ ] Set up database schema (User, Family, etc.)
-- [ ] Configure NextAuth.js
 - [ ] Create login page
 - [ ] Create register page
 - [ ] Create family creation flow
@@ -141,12 +187,6 @@
 ---
 
 ## Polish & Deploy
-
-### PWA
-- [ ] Create manifest.json
-- [ ] Add service worker
-- [ ] Enable offline support
-- [ ] Add install prompt
 
 ### Testing & Quality
 - [ ] Add loading skeletons
