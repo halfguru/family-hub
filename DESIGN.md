@@ -1,8 +1,132 @@
-# Family App - UI Design
+# Family App - Design System
 
-Mobile-first design. Primary: phone. Secondary: desktop browser.
+> **See [README.md](./README.md) for features, tech stack, and project structure.**
 
-## Navigation Structure
+## Design Direction: Warm Minimal
+
+**Not corporate. Not cold. Homey.**
+
+This app should feel like a warm, welcoming space for your family - not a productivity dashboard you'd use at work. Clean and organized, but with personality and warmth.
+
+### Design Principles
+
+| Principle | What it means |
+|-----------|---------------|
+| **Warm** | Soft colors, rounded corners, friendly icons |
+| **Minimal** | Clean layouts, focused content, not cluttered |
+| **Personal** | Family photos, milestones, celebrates your life |
+| **Calm** | Easy on eyes, low cognitive load, pleasant to use daily |
+
+### Visual Comparison
+
+| Element | Corporate (Avoid) | Warm Minimal (Target) |
+|---------|-------------------|----------------------|
+| Colors | Blue/gray, cold | Cream, sage, warm beige, dusty rose |
+| Feel | Tool, dashboard | Home, family space |
+| Icons | Functional | Friendly, outlined |
+| Typography | System default | Inter, clean but soft |
+| Corners | Sharp or minimal rounding | Generous rounding (12-16px) |
+| Shadows | Harsh, high contrast | Soft, warm-tinted |
+| Illustrations | None or generic | Subtle, family-friendly |
+
+---
+
+## Design System
+
+### Color Palette
+
+**Light Mode:**
+```
+Primary:      #6B8E6B (sage green)
+Secondary:    #D4A574 (warm terracotta)
+Accent:       #E8B4B8 (dusty rose)
+Success:      #7CB08B (soft green)
+Warning:      #E5C07B (warm amber)
+Error:        #D4878C (soft coral)
+
+Background:   #FFFBF5 (warm white)
+Surface:      #FFF8F0 (cream)
+Card:         #FFFFFF (white)
+Text:         #3D3B3A (warm black)
+Muted:        #8A8685 (warm gray)
+Border:       #E8E4E1 (warm border)
+```
+
+**Dark Mode:**
+```
+Primary:      #8BB08B (lighter sage)
+Secondary:    #E5B88A (lighter terracotta)
+Accent:       #F0C4C8 (lighter rose)
+
+Background:   #1C1B1A (warm dark)
+Surface:      #252423 (warm charcoal)
+Card:         #2D2C2B (warm gray)
+Text:         #F5F2EF (warm white)
+Muted:        #A09E9C (warm gray)
+Border:       #3D3B3A (warm border)
+```
+
+**Family Member Colors:**
+```
+Parent 1:   #6B8E6B (sage)
+Parent 2:   #7BA3C4 (soft blue)
+Child 1:    #E8B4B8 (dusty rose)
+Child 2:    #B8A5D4 (soft lavender)
+Shared:     #A09E9C (warm gray)
+```
+
+### Typography
+
+```
+Font: Inter (https://fonts.google.com/specimen/Inter)
+
+Display:   32px / Bold    (hero headlines)
+H1:        24px / Bold    (page titles)
+H2:        20px / Semibold (section headers)
+H3:        18px / Semibold (card titles)
+Body:      16px / Regular (content)
+Small:     14px / Regular (secondary text)
+Caption:   12px / Regular (labels, hints)
+
+Line height: 1.5 for body, 1.25 for headings
+```
+
+### Spacing Scale
+
+```
+1:   4px
+2:   8px
+3:   12px
+4:   16px
+5:   24px
+6:   32px
+7:   48px
+8:   64px
+```
+
+### Border Radius
+
+```
+sm:   6px   (buttons, inputs)
+md:   12px  (cards)
+lg:   16px  (modals, bottom sheets)
+xl:   24px  (hero elements)
+full: 9999px (pills, avatars)
+```
+
+### Shadows
+
+```
+sm:  0 1px 2px rgba(61, 59, 58, 0.05)
+md:  0 4px 6px rgba(61, 59, 58, 0.07)
+lg:  0 10px 15px rgba(61, 59, 58, 0.1)
+```
+
+Note: Use warm-tinted shadows (based on warm black), not pure gray.
+
+---
+
+## Navigation
 
 ### Mobile (Bottom Nav)
 
@@ -12,7 +136,6 @@ Mobile-first design. Primary: phone. Secondary: desktop browser.
 ├─────────────────────────────────────┤
 │                                     │
 │         [Main Content]              │  ← Scrollable
-│                                     │
 │                                     │
 ├─────────────────────────────────────┤
 │   🏠    📅    ➕    📋    ⋯        │  ← Bottom Nav
@@ -24,13 +147,13 @@ Mobile-first design. Primary: phone. Secondary: desktop browser.
 
 | Tab | Icon | Purpose |
 |-----|------|---------|
-| Home | 🏠 | Dashboard - today's overview |
-| Calendar | 📅 | Full calendar views |
-| Quick Add | ➕ | FAB - add anything quickly |
-| Lists | 📋 | Shopping lists & tasks |
-| More | ⋯ | Documents, Health, Meals, Settings |
+| Home | Home | Dashboard - today's overview |
+| Calendar | Calendar | Full calendar views |
+| Quick Add | Plus | FAB - add anything quickly |
+| Lists | ListTodo | Shopping lists & tasks |
+| More | MoreHorizontal | Documents, Health, Meals, Settings |
 
-### Desktop (Sidebar Nav)
+### Desktop (Sidebar)
 
 ```
 ┌────────┬────────────────────────────────┐
@@ -64,6 +187,8 @@ Mobile-first design. Primary: phone. Secondary: desktop browser.
 │ Sett.  │                                │
 └────────┴────────────────────────────────┘
 ```
+
+---
 
 ## Page Layouts
 
@@ -134,7 +259,6 @@ Primary view. Shows everything relevant to *today*.
 ```
 
 **View toggles:** Month | Week | Day (swipe left/right to change)
-
 **Color coding:** Each family member gets a color. Events show assigned colors.
 
 ### 3. Quick Add (FAB Modal)
@@ -187,10 +311,6 @@ Tabbed view with swipe between tabs.
 │ │ Costco                 2 items  │ │
 │ └─────────────────────────────────┘ │
 │                                     │
-│ ┌─────────────────────────────────┐ │
-│ │ Pharmacy               1 item   │ │
-│ └─────────────────────────────────┘ │
-│                                     │
 │            [+ New List]             │
 │                                     │
 └─────────────────────────────────────┘
@@ -232,7 +352,7 @@ Tabbed view with swipe between tabs.
 │ └─────────────────────────────────┘ │
 │                                     │
 │ ┌─────────────────────────────────┐ │
-│ 👶 Babysitter Sheet               │ │
+│ │ 👶 Babysitter Sheet             │ │
 │ │ Emergency info & routines       │ │
 │ └─────────────────────────────────┘ │
 │                                     │
@@ -255,98 +375,7 @@ Tabbed view with swipe between tabs.
 └─────────────────────────────────────┘
 ```
 
-### 6. Documents
-
-```
-┌─────────────────────────────────────┐
-│ Documents                 [+ Add]  │
-├─────────────────────────────────────┤
-│                                     │
-│ 📁 Folders                          │
-│                                     │
-│ ┌───────────┐ ┌───────────┐        │
-│ │   🪪      │ │   🏥      │        │
-│ │  IDs &    │ │  Medical  │        │
-│ │  Legal    │ │           │        │
-│ │   5 docs  │ │   8 docs  │        │
-│ └───────────┘ └───────────┘        │
-│                                     │
-│ ┌───────────┐ ┌───────────┐        │
-│ │   🎒      │ │   📄      │        │
-│ │  School   │ │  Other    │        │
-│ │   3 docs  │ │   2 docs  │        │
-│ └───────────┘ └───────────┘        │
-│                                     │
-│ 🔗 Google Drive Sync                │
-│ Connected ✓                         │
-│                                     │
-└─────────────────────────────────────┘
-```
-
-### 7. Babysitter Sheet
-
-One-page emergency reference. Shareable link.
-
-```
-┌─────────────────────────────────────┐
-│ Babysitter Sheet                    │
-│ [Share Link] [Print]               │
-├─────────────────────────────────────┤
-│                                     │
-│ 🚨 EMERGENCY                        │
-│                                     │
-│ Simon (Dad)                         │
-│ 📱 555-123-4567                     │
-│                                     │
-│ Sarah (Mom)                         │
-│ 📱 555-987-6543                     │
-│                                     │
-│ 👨‍⚕️ Pediatrician                    │
-│ Dr. Johnson                         │
-│ 📱 555-246-8135                     │
-│                                     │
-│ 🏥 Nearest ER                       │
-│ Children's Hospital                 │
-│ 123 Health St                       │
-│                                     │
-│ ─────────────────────────────────── │
-│                                     │
-│ 👶 KIDS                             │
-│                                     │
-│ Emma (3 years)                      │
-│ ⚠️ Allergic to peanuts             │
-│                                     │
-│ Lucas (1 month)                     │
-│ No allergies                        │
-│                                     │
-│ ─────────────────────────────────── │
-│                                     │
-│ 🌙 BEDTIME ROUTINE                  │
-│                                     │
-│ Emma: 7:30pm                        │
-│ 1. Bath                             │
-│ 2. Pajamas                          │
-│ 3. 2 books                          │
-│ 4. Lights out                       │
-│                                     │
-│ Lucas: 8:00pm                       │
-│ (follow hunger cues)                │
-│                                     │
-│ ─────────────────────────────────── │
-│                                     │
-│ 📶 WiFi                             │
-│ Network: SmithFamily                │
-│ Password: xyz123                    │
-│                                     │
-│ 🔐 Alarm Code                       │
-│ 1234                                │
-│                                     │
-└─────────────────────────────────────┘
-```
-
-### 8. Family & Profiles
-
-Manage all household members. Tap any person to see their profile.
+### 6. Family & Profiles
 
 **Family List:**
 ```
@@ -369,11 +398,6 @@ Manage all household members. Tap any person to see their profile.
 │ ┌─────────────────────────────────┐ │
 │ │  👧 Emma                  3 yrs │ │
 │ │  Child · 2 events today         │ │
-│ └─────────────────────────────────┘ │
-│                                     │
-│ ┌─────────────────────────────────┐ │
-│ │  👶 Lucas                1 mo  │ │
-│ │  Child                          │ │
 │ └─────────────────────────────────┘ │
 │                                     │
 └─────────────────────────────────────┘
@@ -402,9 +426,6 @@ Manage all household members. Tap any person to see their profile.
 │ ┌─────────────────────────────────┐ │
 │ │ Said "butterfly"! 🦋            │ │
 │ │ 2 days ago                      │ │
-│ ├─────────────────────────────────┤ │
-│ │ Rode tricycle 🚲                │ │
-│ │ 1 week ago                      │ │
 │ └─────────────────────────────────┘ │
 │                                     │
 │ QUICK LINKS                         │
@@ -412,91 +433,11 @@ Manage all household members. Tap any person to see their profile.
 │ │  📅       │ │  💊       │        │
 │ │ Calendar  │ │ Vaccines  │        │
 │ └───────────┘ └───────────┘        │
-│ ┌───────────┐ ┌───────────┐        │
-│ │  ⭐       │ │  📝       │        │
-│ │Milestones │ │  Notes    │        │
-│ └───────────┘ └───────────┘        │
 │                                     │
 └─────────────────────────────────────┘
 ```
 
-**Profile Actions:**
-- Edit name, avatar, birthday
-- Assign color (for calendar/events)
-- Set role (Admin, Member, Child)
-- View their events filtered
-- View their milestones
-- View their medical records
-- View their tasks/chores
-
-**Avatar Colors:**
-Each person gets assigned a color used throughout the app:
-- Events on calendar
-- Tasks assigned to them
-- Milestones
-- Quick visual filter
-
-## Design System
-
-### Colors
-
-```
-Primary:     #3B82F6 (blue)
-Secondary:   #10B981 (green)
-Accent:      #F59E0B (amber)
-Danger:      #EF4444 (red)
-
-Background:  #FFFFFF (light) / #0F172A (dark)
-Surface:     #F8FAFC (light) / #1E293B (dark)
-Text:        #0F172A (light) / #F8FAFC (dark)
-Muted:       #64748B
-```
-
-**Family member colors:**
-- Parent 1: Blue
-- Parent 2: Green
-- Child 1: Pink
-- Child 2: Purple
-- Shared/Everyone: Gray
-
-### Typography
-
-```
-Font: Inter (system fallback)
-
-H1:  24px / Bold
-H2:  20px / Semibold
-H3:  18px / Semibold
-Body: 16px / Regular
-Small: 14px / Regular
-Caption: 12px / Regular
-```
-
-### Spacing
-
-```
-xs:  4px
-sm:  8px
-md:  16px
-lg:  24px
-xl:  32px
-```
-
-### Touch Targets
-
-- Minimum: 44px × 44px
-- Bottom nav: 56px height
-- List items: 56px minimum height
-- Buttons: 48px height
-
-### Border Radius
-
-```
-sm:  4px   (buttons, inputs)
-md:  8px   (cards)
-lg:  16px  (modals, bottom sheets)
-full: 9999px (pills, avatars)
-```
+---
 
 ## Interactions
 
@@ -526,6 +467,8 @@ full: 9999px (pills, avatars)
 - Loading skeletons, not spinners
 - Optimistic UI updates
 
+---
+
 ## Responsive Breakpoints
 
 ```
@@ -534,9 +477,43 @@ Tablet:   640 - 1023px (bottom nav, 2 columns)
 Desktop:  1024px+      (sidebar nav, 3+ columns)
 ```
 
+---
+
+## Touch Targets
+
+- Minimum: 44px × 44px
+- Bottom nav: 56px height
+- List items: 56px minimum height
+- Buttons: 48px height
+
+---
+
 ## PWA Features
 
 - Installable on home screen
 - Offline support for viewing cached data
 - Push notifications (optional)
 - Share target (share text/images to app)
+
+---
+
+## Design Inspiration
+
+Apps that capture the "warm minimal" aesthetic:
+- **Notion** - Clean, approachable, friendly
+- **Headspace** - Calm, soft colors, rounded
+- **Duolingo** - Playful but not childish
+- **Linear** - Polished, modern (but warmer palette)
+- **Bear Notes** - Warm, personal, clean
+
+---
+
+## Component Libraries
+
+Using **shadcn/ui** with custom theme:
+- Copy components into project
+- Customize colors via CSS variables
+- Override border-radius for warmer feel
+- Add soft shadows
+
+Icon library: **Lucide React** (outlined, friendly)
