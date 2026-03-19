@@ -4,7 +4,7 @@ Development guidelines and commands for the Family App.
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **UI**: Tailwind CSS + shadcn/ui
 - **Icons**: Lucide React
 - **Database**: Supabase (PostgreSQL)
