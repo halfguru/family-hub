@@ -20,7 +20,7 @@
 - [x] Create manifest.json (app name, icons, theme colors)
 - [x] Configure next-pwa or @ducanh2912/next-pwa
 - [x] Add service worker for offline support
-- [ ] Create app icons (various sizes)
+- [x] Create app icons (various sizes)
 - [ ] Add install prompt component
 
 ### Database & Auth
@@ -30,7 +30,7 @@
 - [x] Configure NextAuth with credentials provider
 - [x] Create auth route handlers
 - [x] Create session provider wrapper
-- [ ] Add middleware for protected routes
+- [x] Add middleware for protected routes
 
 ### Layout & Navigation
 - [x] Create root layout with providers
@@ -80,15 +80,17 @@
 ## Phase 2: Core Features
 
 ### Calendar
-- [ ] Create calendar page
-- [ ] Build month view component
+- [x] Create calendar page
+- [x] Build month view component
 - [ ] Build week view component
 - [ ] Build day view component
 - [ ] Add event creation modal
 - [ ] Add event editing/deleting
 - [ ] Implement recurring events
-- [ ] Add Google Calendar sync
+- [x] Add Google Calendar sync (OAuth + read-only)
 - [ ] Color-code events by family member
+- [x] Add Google Tasks integration
+- [x] Show today's events on home page
 
 ### Shopping Lists
 - [ ] Create lists page
@@ -103,6 +105,7 @@
 
 ### Chores & Tasks
 - [ ] Create tasks page
+- [x] Integrate Google Tasks API
 - [ ] Build task card component
 - [ ] Add task assignment to family members
 - [ ] Implement recurring schedules
@@ -189,7 +192,7 @@
 ## Polish & Deploy
 
 ### Testing & Quality
-- [ ] Add loading skeletons
+- [x] Add loading skeletons
 - [ ] Add error boundaries
 - [ ] Test on mobile devices
 - [ ] Test dark mode
